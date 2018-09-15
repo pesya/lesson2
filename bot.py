@@ -18,15 +18,6 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
                     )
 
 
-def main():
-    mybot = Updater("659806032:AAEzxPcmOtNRtawBl_maB_zF4Nzxpz_oGFQ", request_kwargs=PROXY)
-    dp = mybot.dispatcher
-    dp.add_handler(CommandHandler("start", greet_user))
-    dp.add_handler(CommandHandler("planet", what_constellation))
-    mybot.start_polling()
-    mybot.idle()
-
-
 def greet_user(bot, update):
     text = 'Hi! Give me some planet (ex. "/planet Mars")'
     print(text)
@@ -49,4 +40,13 @@ def what_constellation(bot, update):
         update.message.reply_text('Sorry, try smth else :(')
 
 
-main()
+def main():
+    mybot = Updater("659806032:AAEzxPcmOtNRtawBl_maB_zF4Nzxpz_oGFQ", request_kwargs=PROXY)
+    dp = mybot.dispatcher
+    dp.add_handler(CommandHandler("start", greet_user))
+    dp.add_handler(CommandHandler("planet", what_constellation))
+    mybot.start_polling()
+    mybot.idle()
+
+if __name__ == "__main__":
+    main()

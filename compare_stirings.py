@@ -7,13 +7,13 @@
 
 
 def compare_strings(s1, s2):
-    if s1.isalpha() == False or s2.isalpha() == False:
+    if not isinstance(s1, str) or not isinstance(s2, str):
         return 0
     elif len(s1) == len(s2):
         return 1
     elif len(s1) > len(s2):
         return 2
-    elif len(s1) != len(s2) and s2 == 'learn':
+    elif s2 == 'learn':
         return 3
 
 

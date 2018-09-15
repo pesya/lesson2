@@ -17,7 +17,7 @@ def ask_user():
         while a != 'Пока':
             print(qa.get(a, 'Моя не понимать :('))
             a = input('Что хочешь спросить? ')
-    except:
+    except KeyboardInterrupt:
         print(' Ну пока :(')
 
 

@@ -8,11 +8,13 @@ user_age = int(input('Give me your age: '))
 
 
 def what_user_do(age):
-    if age < 8:
+    if age < 0:
+        return 'Give me positive number, please!'
+    elif age < 8:
         return  'You are at kindergarten!'
-    elif 8 <= age < 18:
+    elif age < 18:
         return  'You are at school!'
-    elif 18 <= age < 25:
+    elif age < 25:
         return 'You are at university!'
     else:
         return 'You are working ;('
